@@ -21,24 +21,44 @@
 //console.log(`Math.random() = ${Math.random()}`);
 
 let numList = [];
-//let size=1;
 
-for(let i=0; i<6; i++){
-    numList[i] = Math.floor(Math.random()*45)+1;
+
+for(let size=0;size<6;){
+    let num = Math.floor(Math.random()*45)+1;
+    if(isEquals(num)){
+    numList[size] = num;
+    size++;
+    }
 }
 numList.sort(function(a, b){return a-b});
 console.log(numList)
 
-//numList = (Math.random() * 45) + 1;
-//if (isEquals(number)) {
-//numList=number;
-//size++;
-//}
-//function isEquals(number) {
-//for (let i = 0; i < numList.length; i++) {
-//if (number === numList[i]) {
-// return false;
-// }
-//  }
-// return true;
-// }
+function isEquals(num){
+    for(let i=0; i<numList.length; i++){
+    if(numList[i] == num){
+        return false;
+    }
+    }
+    return true;
+}
+
+class Wizard{
+     health=0;
+     mana=0;
+     armor=0;
+
+    constructor(health,mana,armor){
+    this.health= health;
+    this.mana= mana;
+    this.armor= armor;
+    }
+
+     attack(){
+        console.log(`파이어볼`);
+    }
+
+}
+
+const x =new Wizard(545,210,10);
+console.log(x.health, x.mana, x.armor);
+x.attack();
