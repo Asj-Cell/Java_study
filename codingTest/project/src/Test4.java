@@ -3,10 +3,15 @@ import java.util.Scanner;
 public class Test4 {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("입력: ");
-        String input = scanner.nextLine();
-        String result = new StringBuilder(input).reverse().toString();
-        System.out.println("출력: "+result);
+        int result = math(3, 4);
+        System.out.println("result = " + result);
+    }
+
+    public static int math(int num1, int num2) {
+        int result =1;
+        for (int i = 0; i < num2; i++) {
+            result *= num1;
+        }
+        return result;
     }
 }
